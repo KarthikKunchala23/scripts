@@ -3,7 +3,7 @@
 export SMTP_HOST="smtp.gmail.com"
 export SMTP_PORT="587"
 export SMTP_USER="karthikkunchala07@gmail.com"
-export SMTP_PASS="yevw swdh dxqz lrsy"
+export SMTP_PASS="" # consider using app password for Gmail
 export SMTP_FROM="karthikkunchala07@gmail.com"
 export SMTP_STARTTLS="true"
 
