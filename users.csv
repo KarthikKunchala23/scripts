@@ -1,0 +1,4 @@
+username,group,is_sudo
+dbteam,dbteam,yes
+devops,devops,nopasswd
+support,support,no
