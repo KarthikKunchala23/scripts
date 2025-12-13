@@ -12,13 +12,13 @@ set -euo pipefail
 
 #### CONFIG - edit these values ####
 declare -A TENANT_DIRS=(
-  ["stallions"]="/tmp/dev/stallions"
-  ["tfi"]="/tmp/dev/tfi"
+  ["ganga"]="/tmp/dev/ganga"
+  ["yamuna"]="/tmp/dev/yamuna"
 )
 
 declare -A TENANT_EMAILS=(
-  ["stallions"]="karthikkunchala07@gmail.com"
-  ["tfi"]="karthikkunchala07@gmail.com"
+  ["ganga"]="karthikkunchala07@gmail.com"
+  ["yamuna"]="karthikkunchala07@gmail.com"
 )
 
 STORAGE_DIR="/var/log/linux_tenant_usage"    # store snapshots per tenant

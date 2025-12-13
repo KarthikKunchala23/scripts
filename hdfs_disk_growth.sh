@@ -6,13 +6,13 @@ set -euo pipefail
 
 #### CONFIG - edit these ####
 declare -A TENANT_DIRS=(
-  ["stallions"]="/data/dev/stallions"
-  ["tfi"]="/data/dev/tfi"
+  ["ganga"]="/data/dev/ganga"
+  ["yamuna"]="/data/dev/yamuna"
 )
 
 declare -A TENANT_EMAILS=(
-  ["stallions"]="karthikkunchala2398@gmail.com"
-  ["tfi"]="karthikkunchala2307@gmail.com"
+  ["ganga"]="karthikkunchala2398@gmail.com"
+  ["yamuna"]="karthikkunchala2307@gmail.com"
 )
 
 STORAGE_DIR="/var/log/hdfs_tenant_usage"      # snapshot store
