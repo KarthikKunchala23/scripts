@@ -47,6 +47,22 @@ trim() {
     printf '%s' "$var"
 }
 
+# Add password for user (if needed)
+add_password() {
+    local username="$1"
+    password=$(date +%s%N | sha256sum | head -c48)
+    echo "${username}:${password}" | chpasswd
+    if [[ $? -ne 0 ]]; then
+        log "ERROR: Failed to set password for user '$username'."
+        return 1
+    fi
+    log "Set random password for user '$username':'$password'."
+
+    #force password change on first login
+    chage -d 0 "$username"
+    log "Forced password change on first login for user '$username'."
+}
+
 # Validate and install sudoers content safely
 install_sudoers() {
     local username="$1"
@@ -103,6 +119,7 @@ add_or_update_user() {
     else
         log "Creating user '$username'..."
         useradd -m -d "$home_dir" -s "$shell" -g "$groupname" "$username"
+        add_password "$username"
         log "User '$username' created with home '$home_dir', shell '$shell', group '$groupname'."
     fi
 
