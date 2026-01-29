@@ -62,3 +62,4 @@ echo "Top 5 Memory Consuming Processes:"
 mem_top_5=$(ps aux --sort=-%mem | head -n 6)
 echo "$mem_top_5" >> /var/log/system_alert.log
 
+fjsbb 
