@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
-# Azure-safe Automated Disk Mount Script
-# Supports: auto-partition, auto-format, UUID-only fstab, reboot persistence
+# Automated Mount & /etc/fstab Validator
+# Usage: sudo ./mount_fstab_validator.sh [--dry-run] <device> <mount_point> <fs_type> [mount_options] [dump] [pass]
+#
+# Examples:
+#  sudo ./mount_fstab_validator.sh /dev/xvdf /mnt/data ext4 defaults 0 2
+#  sudo ./mount_fstab_validator.sh --dry-run /dev/xvdf /mnt/data ext4 noatime,nodiratime 0 2
+
 
 set -euo pipefail
 
